@@ -1,4 +1,7 @@
 
+--leader
+vim.g.mapleader = "\\"
+vim.keymap.set("n", "<leader>n", ":noh<CR>")
 
 -- line numbers
 vim.opt.number = true
