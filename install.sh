@@ -30,12 +30,12 @@ install_pkgs() {
   fi
 
   if command -v pacman &>/dev/null; then
-    sudo pacman -S --needed "${packages[@]}"
+    sudo pacman -S --needed "${packages[@]}" || return 1
   elif command -v apt &>/dev/null; then
-    sudo apt update && sudo apt install -y "${packages[@]}"
+    sudo apt update && sudo apt install -y "${packages[@]}" || return 1
   else
     echo "Package manager unsupported."
-    exit 1
+    return 1
   fi
 }
 
@@ -85,7 +85,10 @@ done
 echo
 echo "Starting dotfile installation..."
 echo
-install_pkgs
+if ! install_pkgs; then
+  echo "Pkg install failed, skipping symlinks"
+  exit 1
+fi
 echo
 link_dotfiles
 echo
