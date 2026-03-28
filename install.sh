@@ -26,7 +26,7 @@ install_pkgs() {
   packages+=(rsync eza fzf btop)
 
   if [[ "$MINIMAL" == false ]]; then
-    packages+=(alacritty ttf-iosevkaterm-nerd ttf-firacode-nerd)
+    packages+=(wl-clipboard alacritty ttf-iosevkaterm-nerd ttf-firacode-nerd)
   fi
 
   if command -v pacman &>/dev/null; then

@@ -1,3 +1,14 @@
 
-alias ez="eza --icons -la"
+
+# safety
+alias rm="rm -i"
+alias mv="mv -i"
+alias cp="cp -i"
+
+# commonly used
+alias ez="eza --icons"
+
+
+# aesthetic
+alias grep="grep --color=auto"
 
