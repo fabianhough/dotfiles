@@ -7,7 +7,7 @@ DOTFILES="$(cd "$(dirname "$0")" && pwd)"
 # == pkg install ==
 install_pkgs() {
   echo "Installing packages..."
-  local packages=(zsh)
+  local packages=(zsh starship)
 
   if command -v pacman &>/dev/null; then
     sudo pacman -S --needed "${packages[@]}"
@@ -27,6 +27,8 @@ link_dotfiles() {
   # zsh
   ln -sf "$DOTFILES/zsh/.zshrc" "$HOME/.zshrc"
 
+  # starship
+  ln -sf "$DOTFILES/starship/starship.toml" "$HOME/.config/starship.toml"
 }
 
 
