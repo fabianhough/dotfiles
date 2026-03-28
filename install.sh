@@ -20,7 +20,7 @@ show_help() {
 # == pkg install ==
 install_pkgs() {
   echo "Installing packages..."
-  local packages=(zsh starship)
+  local packages=(zsh starship neovim)
   
   if [[ "$MINIMAL" == false ]]; then
     packages+=(alacritty ttf-iosevkaterm-nerd ttf-firacode-nerd)
@@ -43,6 +43,10 @@ link_dotfiles() {
   
   # zsh
   ln -sf "$DOTFILES/zsh/.zshrc" "$HOME/.zshrc"
+
+  # neovim
+  mkdir -p "$HOME/.config/nvim"
+  ln -sf "$DOTFILES/nvim/init.lua" "$HOME/.config/nvim/init.lua"
 
   if [[ "$MINIMAL" == false ]]; then
     # starship - themed
