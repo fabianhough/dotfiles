@@ -7,6 +7,7 @@ alias cp="cp -i"
 
 # commonly used
 alias ez="eza --icons"
+alias le="eza --icons"
 
 
 # aesthetic
