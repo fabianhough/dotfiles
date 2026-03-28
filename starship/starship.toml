@@ -10,8 +10,8 @@ empty_symbol = "❗ "
 [erlang]
 symbol = "ⓔ "
 
-[fortran]
-symbol = "F "
+# [fortran]
+# symbol = "F "
 
 [nodejs]
 symbol = "[⬢](bold green) "
