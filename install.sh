@@ -22,6 +22,9 @@ install_pkgs() {
   echo "Installing packages..."
   local packages=(zsh starship neovim zellij)
   
+  # utilities
+  packages+=(rsync eza fzf btop)
+
   if [[ "$MINIMAL" == false ]]; then
     packages+=(alacritty ttf-iosevkaterm-nerd ttf-firacode-nerd)
   fi
@@ -43,6 +46,7 @@ link_dotfiles() {
   
   # zsh
   ln -sf "$DOTFILES/zsh/.zshrc" "$HOME/.zshrc"
+  ln -sf "$DOTFILES/zsh/.zsh_alias" "$HOME/.zsh_alias"
 
   # neovim
   mkdir -p "$HOME/.config/nvim"

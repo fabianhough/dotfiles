@@ -11,5 +11,17 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# editor
+export EDITOR="nvim"
+export VISUAL="nvim"
+
+# alias
+source ~/.zsh_alias
+
+# shell prompt
 eval "$(starship init zsh)"
+
+# fzf
+source <(fzf --zsh)
+
 
